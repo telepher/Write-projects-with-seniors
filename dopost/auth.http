@@ -1,0 +1,38 @@
+POST {{baseURL}}/hash
+Content-Type: application/json
+
+{
+  "username": "{{username}}",
+  "password": "{{password}}"
+}
+
+> {%
+  client.test('status is 204', () => {
+    client.assert(response.status === 204, 'status is 200')
+  })
+%}
+
+###
+
+GET {{baseURL}}/counter
+
+> {%
+  const body = /** @type {{ c: number }} */ response.body
+  client.log('counter value: ' + body.c)
+  client.test('status is 200', () => {
+    client.assert(response.status === 200, 'status is 200')
+  })
+%}
+
+###
+
+# @no-cookie-jar
+GET {{baseURL}}/counter
+
+> {%
+  client.test('status is 401', () => {
+    client.assert(response.status === 401, 'status is 401')
+  })
+%}
+
+###

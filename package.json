@@ -1,0 +1,47 @@
+{
+  "name": "25h",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "serve": "vite",
+    "preview": "vite preview",
+    "run:vercel": "vercel dev -l 13861",
+    "build": "yarn check && vite build"
+  },
+  "dependencies": {
+    "foxact": "^0.2.16",
+    "jose": "^4.14.4",
+    "nanoid": "^4.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.63.6"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.3",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/parser": "^5.61.0",
+    "@upstash/redis": "^1.22.0",
+    "@vercel/node": "^2.15.4",
+    "@vitejs/plugin-react": "^4.0.1",
+    "eslint": "^8.44.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.1",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.0"
+  },
+  "resolutions": {
+    "@vercel/node/**/typescript": "^5.0.2"
+  },
+  "imports": {
+    "#svr/*": "./svr/*"
+  },
+  "packageManager": "yarn@1.22.19"
+}
